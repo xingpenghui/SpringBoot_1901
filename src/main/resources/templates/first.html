@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf初体验</title>
+</head>
+<body>
+<div>
+    <h1>基本应用</h1>
+    <p th:text="'内容：'+${str1}"></p>
+    <input th:value="'数字：'+${num1}"></input><br/>
+    <span th:text="${company.address}"></span>
+    <p></p>
+    <h1>分支</h1>
+    <p>
+    <p th:if="${sex}==0">女</p>
+    <p th:if="${sex}==1">男</p>
+    </p>
+    <h1>循环</h1>
+    <div>
+        <ul>
+            <li th:each=" c:${companylist}">
+                <h5 th:text="${c.id}"></h5>
+                <h5 th:text="${c.name}"></h5>
+                <h5 th:text="${c.nums}"></h5>
+                <h5 th:text="${c.address}"></h5>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
